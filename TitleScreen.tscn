@@ -1,0 +1,184 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/titlescreen.png" type="Texture" id=1]
+[ext_resource path="res://Assets/new_dynamicfont_title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/quit_icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/play_icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/play_icon_active.png" type="Texture" id=5]
+[ext_resource path="res://Assets/quit_icon_active.png" type="Texture" id=6]
+[ext_resource path="res://SourceCode/TitleScreen.gd" type="Script" id=7]
+[ext_resource path="res://Assets/click.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/settings_icon.png" type="Texture" id=9]
+[ext_resource path="res://Assets/settings_icon_active.png" type="Texture" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "quick_change"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2000.0
+margin_top = -1500.0
+margin_right = 2000.0
+margin_bottom = 1500.0
+mouse_filter = 2
+color = Color( 0.709804, 0.807843, 0.768627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1265.0
+margin_top = -1520.0
+margin_right = 1265.0
+margin_bottom = 1010.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -231.0
+margin_top = -413.5
+margin_right = 231.0
+margin_bottom = -116.5
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.917647, 0.956863, 0.956863, 1 )
+text = "12345"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit_button" type="TextureButton" parent="."]
+margin_left = 200.0
+margin_top = 279.0
+margin_right = 504.0
+margin_bottom = 583.0
+rect_pivot_offset = Vector2( 152, 152 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play_button" type="TextureButton" parent="."]
+margin_left = -504.0
+margin_top = 279.0
+margin_right = -200.0
+margin_bottom = 583.0
+rect_pivot_offset = Vector2( 152, 152 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings_button" type="TextureButton" parent="."]
+margin_left = -152.0
+margin_top = 368.0
+margin_right = 152.0
+margin_bottom = 672.0
+rect_pivot_offset = Vector2( 152, 152 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2000.0
+margin_top = -1500.0
+margin_right = 2000.0
+margin_bottom = 1500.0
+mouse_filter = 2
+color = Color( 0.917647, 0.956863, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Click_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start"
+anims/quick_change = SubResource( 1 )
+anims/start = SubResource( 2 )
+[connection signal="button_up" from="Quit_button" to="." method="_on_Quit_button_button_up"]
+[connection signal="button_up" from="Play_button" to="." method="_on_Play_button_button_up"]
+[connection signal="button_up" from="Settings_button" to="." method="_on_Settings_button_button_up"]
