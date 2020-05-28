@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SourceCode/Numbers.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SourceCode/Layers.gd" type="Script" id=2]
+
+[node name="Layer1" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Numbers" parent="." instance=ExtResource( 1 )]
+
+[node name="Numbers2" parent="." instance=ExtResource( 1 )]
+
+[node name="Numbers3" parent="." instance=ExtResource( 1 )]
+
+[node name="Numbers4" parent="." instance=ExtResource( 1 )]
+
+[node name="Numbers5" parent="." instance=ExtResource( 1 )]
+
+[node name="Numbers6" parent="." instance=ExtResource( 1 )]
+
+[node name="Numbers7" parent="." instance=ExtResource( 1 )]
+
+[node name="Numbers8" parent="." instance=ExtResource( 1 )]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 3.31788, -2.56396 )
+scale = Vector2( 2.26792, -2.30866 )
+polygon = PoolVector2Array( 111.416, -1.11058, 97.3061, -56.554, 54.9765, -98.1366, -1.46297, -111.997, -57.9025, -98.1366, -100.232, -56.554, -114.342, -1.11058, -174.309, -1.11058, -163.727, -56.554, -142.562, -98.1366, -114.342, -129.323, -57.9025, -160.51, -1.46297, -174.371, 54.9765, -160.51, 111.416, -129.323, 139.636, -98.1366, 160.801, -56.554, 171.383, -1.11058, 160.801, 54.3328, 139.636, 95.9154, 111.416, 127.102, 54.9765, 158.289, -1.46297, 168.685, -57.9025, 158.289, -114.342, 127.102, -142.562, 95.9154, -163.727, 54.3328, -174.309, -1.11058, -114.342, -1.11058, -100.232, 54.3328, -57.9025, 92.4502, -1.46297, 109.776, 54.9765, 95.9154, 97.3061, 54.3328 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_all_completed"]
